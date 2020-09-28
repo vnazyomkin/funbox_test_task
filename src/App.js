@@ -1,26 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import classes from './App.module.css';
+import Card from './Components/Card';
+
+class App extends Component {
+  state = { 
+    food: [
+      {
+        taste: 'с фуагра',
+        weight: 0.5,
+        action: 'мышь в подарок',
+      },
+      {
+        taste: 'с рыбой',
+        weight: 2,
+        action: '2 мыши в подарок',
+      },
+      {
+        taste: 'с курой',
+        weight: 5,
+        action: '2 мышей в подарок',
+        comment: 'заказчик доволен',
+      }
+    ],
+  }
+  render() {
+    const Cards = this.state.food.map(card => (
+      <Card {...card}/>
+    ));
+    return (
+      <main className={classes.App}>
+          <p className={classes.p}>Ты сегодня покормил кота?</p>
+          <article className={classes.cats}>
+            {Cards}
+          </article>
+      </main>
+    );
+  }
 }
 
 export default App;
