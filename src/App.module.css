@@ -1,0 +1,30 @@
+@font-face {
+  font-family: 'Local';
+  src: url(../src/assets/fonts/Exo2.0-Thin.otf) format('opentype');
+}
+
+.App {
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Local';
+  background-image: url(../src/assets/images/background.png);
+}
+
+.p {
+  text-align: center;
+  color: white;
+  font-size: 21px;
+}
+
+.cats {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
