@@ -2,18 +2,20 @@
     box-sizing: border-box;
     width: 190px;
     height: 270px;
-    background:linear-gradient(135deg, transparent 20px, #58a 0);
     border-radius: 3%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 10px;
+    margin: 15px;
+    cursor: pointer;   
+    user-select: none;   
+    background:linear-gradient(135deg, transparent 20px, #1ae 0);
 }
 
 .Card {
     box-sizing: border-box;
-    min-width: 186px;
-    min-height: 266px;
+    min-width: 184px;
+    min-height: 264px;
     background:linear-gradient(135deg, transparent 20px, rgb(228, 244, 255) 0);
     border-radius: 3%;
     display: flex;
@@ -35,12 +37,76 @@
 }
 
  .Cat {
-    position: relative;
     flex-grow: 1;
     background-image: url(../assets/images/cat.png);
     background-repeat:no-repeat;
     background-size: 130%;
     background-position-x: -20px;
     background-position-y: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
 } 
 
+.Round {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    background-color: #1ae;
+}
+
+.Weight {
+    font-weight: bold;
+    color: white;
+    font-size: 24px;
+    line-height: 14px;
+}
+
+.Kg {
+    color: white;
+    font-weight: bold;
+}
+
+.Text {
+    color: white;
+    font-weight: bold;
+    font-size: 10px;
+}
+
+.Empty {
+    color: yellow;
+    font-weight: bold;
+    font-size: 10px;  
+}
+
+.link {
+    text-decoration: underline #1ae dashed;
+    cursor: pointer;
+    color: #1ae;
+}
+
+.Border__selected {
+    background:linear-gradient(135deg, transparent 20px, #e16 0);
+}
+.Border__empty {
+    background:linear-gradient(135deg, transparent 20px, #999 0);
+    cursor: default;
+}
+
+
+.Round__selected {
+    background-color: #e16;
+}
+.Round__empty {
+    background-color: #999;
+}
+
+.blur {
+    opacity: 50%;
+}

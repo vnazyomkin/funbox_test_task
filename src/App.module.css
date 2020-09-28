@@ -6,6 +6,7 @@
 .App {
   width: 100vw;
   height: 100vh;
+  min-width: 300px;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -13,18 +14,21 @@
   align-items: center;
   font-family: 'Local';
   background-image: url(../src/assets/images/background.png);
+  background-color: black;
+  cursor: default;
 }
 
 .p {
   text-align: center;
   color: white;
   font-size: 21px;
+  font-weight: bold;
 }
 
 .cats {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
