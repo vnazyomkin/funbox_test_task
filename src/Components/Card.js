@@ -23,7 +23,7 @@ const card = (props) => {
     }
 
     return (
-        <section>
+        <section className={classes.section}>
             <div className={borderClasses.join(' ')} onClick={() => props.click(props.id)}>
                 <div className={cardClasses.join(' ')}>
                         <p className={classes.Additional}>Сказачное заморское яство</p>
