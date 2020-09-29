@@ -2,13 +2,13 @@
   font-family: 'Local';
   src: url(../src/assets/fonts/Exo2.0-Thin.otf) format('opentype');
 }
-html{
-  background-color: black;
+body {
+  margin: 0;
 }
 
 .App {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   min-width: 300px;
   text-align: center;
   display: flex;
