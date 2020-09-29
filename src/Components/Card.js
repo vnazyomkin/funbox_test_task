@@ -1,9 +1,12 @@
 import React from 'react';
 
 import classes from './Card.module.css'
+import food from '../store';
 
 const card = (props) => {
-    const text = props.count > 0 ? <p className={classes.Text}>Чего сидишь? Порадуй котэ, <a className={classes.link}>купи</a></p> : <p className={classes.Empty}>Печалька, {props.taste} закончился</p>;
+    const text = props.count > 0 ? 
+        <p className={classes.Text}>Чего сидишь? Порадуй котэ, <a className={classes.link} onClick={() => props.click(props.id)}>купи</a></p> : 
+        <p className={classes.Empty}>Печалька, {props.taste} закончился</p>;
 
     const borderClasses = [classes.Border];
     const roundClasses = [classes.Round];
@@ -21,7 +24,7 @@ const card = (props) => {
 
     return (
         <section>
-            <div className={borderClasses.join(' ')} onClick={(id) => props.select(props.id)}>
+            <div className={borderClasses.join(' ')} onClick={() => props.click(props.id)}>
                 <div className={cardClasses.join(' ')}>
                         <p className={classes.Additional}>Сказачное заморское яство</p>
                         <h2 className={classes.Name}>Нямушка</h2>
@@ -37,7 +40,7 @@ const card = (props) => {
                         </div>
                 </div>
         </div>
-        {text}
+        {props.selected ? <p className={classes.Text}>{food[props.id].selectedText}</p> : text}
         </section>
     );
 };

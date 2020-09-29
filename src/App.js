@@ -2,55 +2,46 @@ import React, {Component} from 'react';
 
 import classes from './App.module.css';
 import Card from './Components/Card';
+import food from './store';
 
 class App extends Component {
 
   state = { 
-    food: [
-      {
-        taste: 'с фуа-гра',
-        weight: 0.5,
-        action: 'мышь в подарок',
+    0: {
         count: 3,
-        id:'Food001',
         selected: false,
-      },
-      {
-        taste: 'с рыбой',
-        weight: 2,
-        action: '2 мыши в подарок',
-        count: 1,
-        id:'Food002',
-        selected: false,
-      },
-      {
-        taste: 'с курой',
-        weight: 5,
-        action: '2 мышей в подарок',
-        comment: 'заказчик доволен',
-        count: 0,
-        id:'Food003',
-        selected: false,
-      }
-    ],
+    },
+    1:{
+      count: 1,
+      selected: false,
+    },
+    2:{
+      count: 0,
+      selected: false,
+    }
   }
 
-  selectCardHandler(id) {
-      const index = this.state.food.findIndex( el => el.id === id );
-      const card = {
-        ...this.state.food[index],
-        selected: true,
-      }; 
-      console.log(card);
-
+  clickCardHandler = id => {
+    if (this.state[id].count > 0) {
+      this.setState({
+        ...this.state,
+        [id]: {
+          ...this.state[id],
+          selected: !this.state[id].selected,
+        }
+      });
+    }
   }
 
   render() {
-    const Cards = this.state.food.map(card => (
+    const Cards = food.map( (card, id) => (
       <Card 
-        {...card} 
-        key={card.id} 
-        select={(id) => this.selectCardHandler(id)}/>
+        {...card}
+        count={this.state[id].count} 
+        selected={this.state[id].selected}
+        id={id}
+        key={id} 
+        click={this.clickCardHandler}/>
     ));
     return (
       <main className={classes.App}>

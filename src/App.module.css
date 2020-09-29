@@ -2,6 +2,9 @@
   font-family: 'Local';
   src: url(../src/assets/fonts/Exo2.0-Thin.otf) format('opentype');
 }
+html{
+  background-color: black;
+}
 
 .App {
   width: 100vw;
